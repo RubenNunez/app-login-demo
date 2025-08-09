@@ -17,3 +17,9 @@ A Flutter application implementing a login screen with email and password valida
 - 3-second simulated backend delay
 - Navigation to an empty second screen
 - Flutter ↔ Native Android integration example
+
+## Dependencies
+- Riverpod
+
+### Run Code Gen
+`dart run build_runner watch -d`

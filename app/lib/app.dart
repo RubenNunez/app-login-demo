@@ -1,0 +1,32 @@
+import 'package:app/router.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class App extends ConsumerWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Get the router that responds to auth state changes
+    final router = ref.watch(routerProvider);
+
+    return MaterialApp.router(
+      title: 'App Login Demo',
+      routerConfig: router,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.light,
+        ),
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+      ),
+    );
+  }
+}
