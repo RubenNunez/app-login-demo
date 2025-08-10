@@ -9,7 +9,7 @@ class Auth extends _$Auth {
 
   Future<void> login() async {
     // Simulate API call
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
 
     state = true;
   }

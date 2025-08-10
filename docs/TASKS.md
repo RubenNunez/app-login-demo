@@ -5,9 +5,9 @@ This document lists all required tasks for the login form implementation.
 ## 📝 Requirements
 
 - [ ] Create a login screen with:
-  - [ ] Email address input
-  - [ ] Password input
-  - [ ] Submit button
+  - [x] Email address input
+  - [x] Password input
+  - [x] Submit button / Sign In button
 
 ## ✅ Validation Rules
 
@@ -23,10 +23,10 @@ This document lists all required tasks for the login form implementation.
 ## 🔄 Submit Flow
 
 - [ ] When the form is valid:
-  - [ ] Simulate backend request with 3-second delay
+  - [x] Simulate backend request with 3-second delay
   - [ ] Show loading indicator during the delay
-  - [ ] Navigate to a new screen when "response" arrives
-  - [ ] New screen can remain empty
+  - [x] Navigate to a new screen when "response" arrives
+  - [x] New screen can remain empty
 
 ## 🎨 UX & Feedback
 
@@ -36,9 +36,9 @@ This document lists all required tasks for the login form implementation.
 ## 📦 Project Setup
 
 - [x] Initialize Git repository
-- [ ] Push code to a **public GitHub repo**
-- [ ] Include a README with:
-  - [ ] Project description
+- [x] Push code to a **public GitHub repo**
+- [x] Include a README with:
+  - [x] Project description
   - [ ] Setup instructions
   - [ ] How to run the app
 

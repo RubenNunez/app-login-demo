@@ -7,7 +7,6 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Get the router that responds to auth state changes
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(

@@ -1,7 +1,7 @@
 import 'package:app/constants/keys.dart';
 import 'package:app/modules/home/home_page.dart';
-import 'package:app/modules/login/auth_provider.dart';
-import 'package:app/modules/login/login_page.dart';
+import 'package:app/modules/auth/provider/auth_provider.dart';
+import 'package:app/modules/auth/pages/login_page.dart';
 import 'package:app/modules/more/more_page.dart';
 import 'package:app/shell.dart';
 import 'package:flutter/foundation.dart';
@@ -37,7 +37,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       // Login route (public)
       GoRoute(path: '/login', builder: (context, state) => const LoginPage()),
 
-      // Protected routes (require authentication)
+      // Protected routes (require authentication) Tabbed Shell
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             RootShell(navigationShell: navigationShell),
@@ -70,45 +70,3 @@ final routerProvider = Provider<GoRouter>((ref) {
     ],
   );
 });
-
-// Keep the original router for backward compatibility
-final router = GoRouter(
-  navigatorKey: rootNavigatorKey,
-  initialLocation: '/login',
-  debugLogDiagnostics: kDebugMode,
-  routes: <RouteBase>[
-    // Login route (public)
-    GoRoute(path: '/login', builder: (context, state) => const LoginPage()),
-
-    // Protected routes (require authentication)
-    StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) =>
-          RootShell(navigationShell: navigationShell),
-      branches: [
-        // Home
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/home',
-              builder: (context, state) => const HomePage(),
-            ),
-          ],
-          initialLocation: '/home',
-          navigatorKey: homeNavigatorKey,
-        ),
-
-        // More
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
-              path: '/more',
-              builder: (context, state) => const MorePage(),
-            ),
-          ],
-          initialLocation: '/more',
-          navigatorKey: moreNavigatorKey,
-        ),
-      ],
-    ),
-  ],
-);
