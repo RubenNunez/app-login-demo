@@ -4,27 +4,27 @@ This document lists all required tasks for the login form implementation.
 
 ## 📝 Requirements
 
-- [ ] Create a login screen with:
+- [x] Create a login screen with:
   - [x] Email address input
   - [x] Password input
   - [x] Submit button / Sign In button
 
 ## ✅ Validation Rules
 
-- [ ] Email must be in a valid format (e.g., `user@example.com`)
-- [ ] Password must:
-  - [ ] Be at least 12 characters long
-  - [ ] Contain at least 1 uppercase letter
-  - [ ] Contain at least 1 lowercase letter
-  - [ ] Contain at least 1 digit
-  - [ ] Contain at least 1 special character (`!@#$%^&*`, etc.)
-- [ ] Show user-friendly error messages when input is invalid
+- [x] Email must be in a valid format (e.g., `user@example.com`)
+- [x] Password must:
+  - [x] Be at least 12 characters long
+  - [x] Contain at least 1 uppercase letter
+  - [x] Contain at least 1 lowercase letter
+  - [x] Contain at least 1 digit
+  - [x] Contain at least 1 special character (`!@#$%^&*`, etc.)
+- [x] Show user-friendly error messages when input is invalid
 
 ## 🔄 Submit Flow
 
-- [ ] When the form is valid:
+- [x] When the form is valid:
   - [x] Simulate backend request with 3-second delay
-  - [ ] Show loading indicator during the delay
+  - [x] Show loading indicator during the delay
   - [x] Navigate to a new screen when "response" arrives
   - [x] New screen can remain empty
 
