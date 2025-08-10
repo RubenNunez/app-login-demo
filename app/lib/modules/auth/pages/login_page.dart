@@ -16,7 +16,23 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final _passwordController = TextEditingController();
 
   bool _isLoading = false;
+  bool _isFormValid = false;
   bool _obscurePassword = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController.addListener(_onFieldsChanged);
+    _passwordController.addListener(_onFieldsChanged);
+  }
+
+  void _onFieldsChanged() {
+    setState(() {
+      _isFormValid =
+          validateEmail(_emailController.text) == null &&
+          validatePassword(_passwordController.text) == null;
+    });
+  }
 
   @override
   void dispose() {
@@ -74,6 +90,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           padding: const EdgeInsets.all(24.0),
           child: Form(
             key: _formKey,
+            autovalidateMode: AutovalidateMode.onUnfocus,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -136,8 +153,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
                 // Login Button
                 ElevatedButton(
-                  onPressed: _isLoading ? null : _login,
+                  onPressed: switch ((_isLoading, _isFormValid)) {
+                    (true, _) => null,
+                    (false, true) => _login,
+                    _ => null,
+                  },
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    foregroundColor: Theme.of(context).colorScheme.onPrimary,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

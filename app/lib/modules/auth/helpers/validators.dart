@@ -22,7 +22,7 @@ String? validatePassword(String? value) {
     return 'Password must contain at least one lowercase letter';
   } else if (!RegExp(r'[0-9]').hasMatch(value)) {
     return 'Password must contain at least one number';
-  } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+  } else if (!RegExp(r'[^A-Za-z0-9]').hasMatch(value)) {
     return 'Password must contain at least one special character';
   }
 
