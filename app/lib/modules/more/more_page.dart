@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class MorePage extends StatelessWidget {
   const MorePage({super.key});
@@ -11,17 +12,17 @@ class MorePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.settings, size: 80, color: Colors.orange),
-            SizedBox(height: 24),
+            Gap(24),
             Text(
               'More Options',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            Gap(16),
             Text(
               'This is also a protected route.',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 8),
+            Gap(8),
             Text(
               'Use the logout button in the app bar to sign out.',
               style: TextStyle(fontSize: 14, color: Colors.grey),

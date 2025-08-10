@@ -2,6 +2,7 @@ import 'package:app/modules/auth/helpers/validators.dart';
 import 'package:app/modules/auth/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -97,19 +98,19 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               children: [
                 // App Logo/Title
                 const Icon(Icons.lock_outline, size: 80, color: Colors.blue),
-                const SizedBox(height: 24),
+                const Gap(24),
                 const Text(
                   'Welcome Back',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8),
+                const Gap(8),
                 const Text(
-                  'Sign in to continue\nDemo: Enter any email and password (12+ chars)',
+                  'Sign in to continue\nDemo: Enter any email and password\n(12+ chars)',
                   style: TextStyle(fontSize: 16, color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 32),
+                const Gap(32),
 
                 // Email Field
                 TextFormField(
@@ -123,7 +124,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   ),
                   validator: validateEmail,
                 ),
-                const SizedBox(height: 16),
+                const Gap(16),
 
                 // Password Field
                 TextFormField(
@@ -149,7 +150,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   ),
                   validator: validatePassword,
                 ),
-                const SizedBox(height: 24),
+                const Gap(24),
 
                 // Login Button
                 ElevatedButton(
