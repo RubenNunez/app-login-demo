@@ -1,9 +1,16 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class AuthNotifier extends StateNotifier<bool> {
-  AuthNotifier() : super(false);
+part 'auth_provider.g.dart';
 
-  void login() {
+@riverpod
+class Auth extends _$Auth {
+  @override
+  bool build() => false;
+
+  Future<void> login() async {
+    // Simulate API call
+    await Future.delayed(const Duration(seconds: 1));
+
     state = true;
   }
 
@@ -11,7 +18,3 @@ class AuthNotifier extends StateNotifier<bool> {
     state = false;
   }
 }
-
-final authProvider = StateNotifierProvider<AuthNotifier, bool>((ref) {
-  return AuthNotifier();
-});

@@ -1,7 +1,6 @@
 import 'package:app/modules/login/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -14,6 +13,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
   bool _isLoading = false;
   bool _obscurePassword = true;
 
@@ -30,14 +30,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     setState(() => _isLoading = true);
 
     try {
-      // Simulate API call
-      await Future.delayed(const Duration(seconds: 1));
-
       // For demo purposes, accept any non-empty credentials
       if (_emailController.text.isNotEmpty &&
           _passwordController.text.isNotEmpty) {
         // Update authentication state
-        ref.read(authProvider.notifier).login();
+        await ref.read(authProvider.notifier).login();
 
         // Navigation will be handled automatically by the router redirect
         if (mounted) {
