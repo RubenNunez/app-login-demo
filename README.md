@@ -26,7 +26,7 @@ A Flutter application implementing a login screen with email and password valida
 - User-friendly error messages
 - 3-second simulated backend delay
 - Navigation to an empty second screen
-- Flutter ↔ Native Android integration example
+- Flutter ↔ Native Android integration example (not done yet)
 
 ## Dependencies
 - Riverpod
