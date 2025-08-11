@@ -30,8 +30,8 @@ This document lists all required tasks for the login form implementation.
 
 ## 🎨 UX & Feedback
 
-- [ ] Provide clear visual feedback for invalid fields
-- [ ] Disable submit button when inputs are invalid or request is pending
+- [x] Provide clear visual feedback for invalid fields
+- [x] Disable submit button when inputs are invalid or request is pending
 
 ## 📦 Project Setup
 
@@ -39,7 +39,7 @@ This document lists all required tasks for the login form implementation.
 - [x] Push code to a **public GitHub repo**
 - [x] Include a README with:
   - [x] Project description
-  - [ ] Setup instructions
-  - [ ] How to run the app
+  - [x] Setup instructions
+  - [x] How to run the app
 
 ---

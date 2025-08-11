@@ -9,6 +9,10 @@ A Flutter application implementing a login screen with email and password valida
 - **/app** - Flutter application source
 - **/app/android** - Native Android module for platform-specific functionality
 
+## Setup and Run
+`flutter pub get`
+`flutter run`
+
 ## 🚀 Features
 
 - Email format validation
