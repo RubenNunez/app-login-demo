@@ -2,6 +2,12 @@
 
 A Flutter application implementing a login screen with email and password validation, a mocked backend delay, and navigation to a secondary screen.
 
+## Screenshot
+<p align="center">
+  <img src="images/result.png" alt="App Login Demo Screenshot" width="320"/>
+</p>
+
+
 ## Project Structure
 
 - **/** - Project root
